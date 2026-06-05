@@ -1,0 +1,14 @@
+{
+  "name": "brasaland-hito-2",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "demo": "tsx src/demo.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  }
+}
