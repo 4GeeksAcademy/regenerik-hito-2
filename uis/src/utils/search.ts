@@ -1,5 +1,9 @@
 import type { Location, MenuItem } from "../types/models";
 
+// Este archivo contiene utilidades de busqueda para encontrar locales e items dentro de colecciones.
+// Incluye busquedas lineales por id y nombre, y una busqueda binaria por capacidad en listas ordenadas.
+
+// 1 - Busca un local por id y devuelve el objeto o null si no existe:
 export function findLocationById(locations: Location[], id: string): Location | null {
   for (const locacion of locations) {
     if (locacion.id === id) {
@@ -10,6 +14,7 @@ export function findLocationById(locations: Location[], id: string): Location | 
   return null;
 }
 
+// 2 - Busca un item del menu por nombre sin distinguir mayusculas:
 export function findMenuItemByName(items: MenuItem[], name: string): MenuItem | null {
   const nombreBuscado: string = name.toLowerCase();
 
@@ -22,6 +27,7 @@ export function findMenuItemByName(items: MenuItem[], name: string): MenuItem | 
   return null;
 }
 
+// 3 - Busca por capacidad usando busqueda binaria y devuelve el indice o -1:
 export function binarySearchLocationByCapacity(
   sortedLocations: Location[],
   targetCapacity: number
